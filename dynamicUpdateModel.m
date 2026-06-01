@@ -2,11 +2,15 @@ function xnext = dynamicUpdateModel(xk,uk)
 % dynamic model update 
 % process noise is automatically added by the simulink function block
 
-% current identified parameters
-A = [0.9896 0 0; 0 1 0.01; -0.0001 -0.268 0.9989];
-B = [4.2052; 0; 0];
+% % current identified parameters
+% A = [0.9896 0 0; 0 1 0.01; -0.0001 -0.268 0.9989];
+% B = [4.2052; 0; 0];
 % note: sampling time is baked into state matrices
 % h = 0.01;
+
+data = load('MATRICES.mat');
+A = data.A;
+B = data.B;
 
 A_nl      = A;
 A_nl(3,2) = 0;
