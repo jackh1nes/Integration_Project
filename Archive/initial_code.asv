@@ -1,0 +1,4 @@
+tend = 40;
+t = 0:h:tend;
+stim_input_1 = sin(3*t);
+input_1 = times
